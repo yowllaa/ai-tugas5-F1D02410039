@@ -1,0 +1,51 @@
+{
+  "judul": "Diagnosis awal hama dan penyakit padi sawah berdasarkan gejala",
+  "batas": "Aturan berasal dari buku dan makalah Kementerian Pertanian (Pertanian Press dan Balai Besar Penelitian Tanaman Padi) dan hanya mencakup lima kelompok masalah padi sawah: wereng batang cokelat, tungro, blas, hawar daun bakteri, dan penggerek batang. Gejala penyakit atau gangguan lain, termasuk kekurangan hara, bisa mirip. Biotipe wereng, ras blas, dan patotipe hawar daun bakteri juga berbeda antar daerah. Hasilnya saran awal, bukan keputusan akhir; konfirmasikan ke petugas pengamat organisme pengganggu tumbuhan (POPT) atau penyuluh pertanian setempat sebelum bertindak.",
+  "sumber": {
+    "S1": "Pengendalian Hama dan Penyakit Utama Tanaman Padi, Suprihanto dkk., Pertanian Press bekerja sama dengan BBPSI Padi (Kementerian Pertanian), 2024, https://epublikasi.pertanian.go.id/pertanianpress/catalog/download/90/91/751?inline=1, diakses 9 Nov 2026",
+    "S2": "Pengendalian Wereng Batang Cokelat pada Padi (mengacu pada Buku Teknik Mengendalikan Hama dan Penyakit Tanaman Padi), Pertanian Press (Kementerian Pertanian), 2023, https://repository.pertanian.go.id/bitstreams/d56e8cbf-cf20-42de-9a64-a1666c33c5d9/download, diakses 9 Nov 2026",
+    "S3": "Karakterisasi Ketahanan Varietas Padi Lokal Terhadap Penyakit Tungro, Dede Kusdiaman dkk., Balai Besar Penelitian Tanaman Padi (Prosiding Padi 2018, Jilid 3), https://repository.pertanian.go.id/bitstreams/3ac828a9-804b-467a-b4c7-a2813a9dd1a9/download, diakses 9 Nov 2026",
+    "S4": "Metode Identifikasi Ras Pyricularia grisea Sacc. Penyebab Penyakit Blas pada Tanaman Padi, Laila Nur Milati, Anggiani Nasution, dan Sudir, Balai Besar Penelitian Tanaman Padi, tanpa tahun terbit (penelitian dilakukan 2015), https://repository.pertanian.go.id/bitstreams/1adeddbb-ba28-4001-b86d-434c73ef984b/download, diakses 9 Nov 2026"
+  },
+  "nama_pendek": {
+    "S1": "Pengendalian Hama dan Penyakit Utama Tanaman Padi (Pertanian Press, 2024)",
+    "S2": "Pengendalian Wereng Batang Cokelat pada Padi (Pertanian Press, 2023)",
+    "S3": "Karakterisasi Ketahanan Varietas Padi Lokal Terhadap Penyakit Tungro (BB Padi, 2018)",
+    "S4": "Metode Identifikasi Ras Pyricularia grisea Penyebab Penyakit Blas (BB Padi)"
+  },
+  "fakta": {
+    "tanaman mengering seperti terbakar berpola melingkar": "Apakah ada hamparan tanaman yang mengering seperti terbakar dan membentuk pola melingkar?",
+    "populasi wereng cokelat melewati ambang kimia": "Apakah populasi wereng cokelat sudah melewati ambang kimia (10 ekor per rumpun pada umur sampai 40 hari setelah tanam, atau 40 ekor per rumpun pada umur lebih dari 40 hari)?",
+    "daun muda kuning-oranye": "Apakah daun muda berwarna kuning-oranye?",
+    "tanaman kerdil dan anakan berkurang": "Apakah tanaman kerdil dan jumlah anakannya berkurang?",
+    "2 rumpun atau lebih bergejala per 100 m2 pada umur 3 MST": "Apakah ditemukan 2 rumpun atau lebih yang bergejala dalam luasan sekitar 100 m2, pada umur 3 minggu setelah tanam (MST)?",
+    "bercak belah ketupat pada daun": "Apakah ada bercak berbentuk belah ketupat pada daun?",
+    "leher malai busuk atau patah, bulir hampa": "Apakah leher malai busuk atau patah sehingga bulir hampa?",
+    "daun hijau keabu-abuan menggulung 1-2 minggu setelah tanam": "Apakah daun berwarna hijau keabu-abuan dan menggulung pada 1 sampai 2 minggu setelah tanam?",
+    "bercak abu-abu lalu kuning jerami dari ujung daun": "Apakah ada bercak abu-abu yang berubah kuning jerami, dimulai dari ujung daun?",
+    "anakan muda mati (sundep)": "Apakah anakan muda pada fase vegetatif mati (sundep)?",
+    "malai putih dan hampa (beluk)": "Apakah malai berwarna putih dan hampa pada fase generatif (beluk)?"
+  },
+  "aturan": [
+    {"id": "R1", "jika": ["tanaman mengering seperti terbakar berpola melingkar"], "mode": "dan", "maka": "serangan wereng batang cokelat", "sumber": ["S1", "S2"]},
+    {"id": "R2", "jika": ["serangan wereng batang cokelat", "populasi wereng cokelat melewati ambang kimia"], "mode": "dan", "maka": "pengendalian kimia wereng cokelat dibenarkan", "sumber": ["S2", "S1"]},
+    {"id": "R3", "jika": ["daun muda kuning-oranye", "tanaman kerdil dan anakan berkurang"], "mode": "dan", "maka": "diduga tungro", "sumber": ["S1", "S3"]},
+    {"id": "R4", "jika": ["diduga tungro", "2 rumpun atau lebih bergejala per 100 m2 pada umur 3 MST"], "mode": "dan", "maka": "tungro: perlu eradikasi dan insektisida", "sumber": ["S1", "S3"]},
+    {"id": "R5", "jika": ["bercak belah ketupat pada daun"], "mode": "dan", "maka": "blas daun", "sumber": ["S1", "S4"]},
+    {"id": "R6", "jika": ["leher malai busuk atau patah, bulir hampa"], "mode": "dan", "maka": "blas leher", "sumber": ["S1", "S4"]},
+    {"id": "R7", "jika": ["blas daun", "blas leher"], "mode": "atau", "maka": "penyakit blas", "sumber": ["S1", "S4"]},
+    {"id": "R8", "jika": ["daun hijau keabu-abuan menggulung 1-2 minggu setelah tanam"], "mode": "dan", "maka": "HDB fase kresek", "sumber": ["S1"]},
+    {"id": "R9", "jika": ["bercak abu-abu lalu kuning jerami dari ujung daun"], "mode": "dan", "maka": "HDB fase hawar", "sumber": ["S1"]},
+    {"id": "R10", "jika": ["HDB fase kresek", "HDB fase hawar"], "mode": "atau", "maka": "hawar daun bakteri (HDB)", "sumber": ["S1"]},
+    {"id": "R11", "jika": ["anakan muda mati (sundep)", "malai putih dan hampa (beluk)"], "mode": "atau", "maka": "serangan penggerek batang", "sumber": ["S1"]}
+  ],
+  "saran": {
+    "serangan wereng batang cokelat": "Pantau populasinya. Pengendalian hayati dilakukan bila wereng kurang dari 1 ekor per tunas, sedangkan insektisida kimia baru dibenarkan bila setelah pengelolaan agroekosistem masih ditemukan 10 ekor atau lebih per rumpun (umur sampai 40 hari setelah tanam) atau 40 ekor atau lebih per rumpun (umur lebih dari 40 hari) (S2). Pantau 20 rumpun secara diagonal setiap minggu (S1).",
+    "pengendalian kimia wereng cokelat dibenarkan": "Populasi sudah melewati ambang (S2). Gunakan insektisida secara bergantian, misalnya berbahan aktif triflumezopyrim, pymetrozine, atau dinotefuran, semprot pukul 08.00 sampai 11.00 dengan 350 sampai 500 liter air per hektar, dan tuntaskan pada generasi 1 atau paling lambat generasi 2 (S1). Ke depan, tanam serempak dan pakai varietas tahan biotipe setempat (S1).",
+    "diduga tungro": "Periksa sebaran gejala di petak. Bila ditemukan 2 rumpun atau lebih yang bergejala per sekitar 100 m2 pada umur 3 MST, tindakan insektisida dibenarkan (S1). Tanaman sakit sebaiknya dicabut dan dibenamkan (S1, S3).",
+    "tungro: perlu eradikasi dan insektisida": "Cabut dan benamkan tanaman sakit, bersihkan sumber inokulum seperti singgang, bibit voluntir, teki, dan eceng, lalu aplikasikan insektisida berbahan aktif imidakloprid atau tiametoksam (S1). Pada musim berikutnya, tanam serempak dan gunakan varietas tahan (S1, S3).",
+    "penyakit blas": "Blas disebabkan cendawan Magnaporthe oryzae, dan diperparah oleh pupuk nitrogen berlebihan, kadar silika rendah, kekeringan, serta kelembapan tinggi (S1). Gunakan pupuk N dan K berimbang, varietas tahan sesuai ras setempat, dan fungisida sistemik dua kali, yaitu saat anakan maksimum dan awal berbunga (S1, S4).",
+    "hawar daun bakteri (HDB)": "HDB disebabkan bakteri Xanthomonas oryzae pv. oryzae, dan dipicu hujan berangin, pupuk N tinggi, kalium rendah, serta genangan terus-menerus (S1). Gunakan benih sehat, tanam legowo, pengairan berselang, pupuk N dan K berimbang, serta varietas tahan sesuai patotipe setempat. Antibiotik sebagai bahan aktif pestisida sudah dilarang (S1).",
+    "serangan penggerek batang": "Sundep terjadi pada fase vegetatif dan beluk pada fase generatif. Sundep di bawah 5% tidak terlalu merugikan karena tanaman dapat membentuk anakan baru (S1). Pasang lampu perangkap (1 unit untuk sekitar 50 hektar) dan aplikasikan insektisida 4 hari setelah ditemukan 1 ngengat di lampu perangkap atau pertanaman (S1)."
+  }
+}
